@@ -4,23 +4,37 @@
     <title>The Zone</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="scripts/leaflet.css">
+    <link rel="stylesheet" href="leaflet-ruler-master/src/leaflet-ruler.css">
     <script src="scripts/leaflet.js"></script>
+    <script src="leaflet-ruler-master/src/leaflet-ruler.js"></script>
+    <link rel="stylesheet" href="scale/Leaflet.GraphicScale.min.css">
   </head>
   
   <body style="height: 100%;margin: 0;">
     <div id="map" style="width: 100%; height: 100%; background: #83847E;"></div>
     <script type="text/javascript">
   //Creating the Map
-    var map = L.map('map').setView([0, 0], 0);
+    var map = L.map('map', {crs: L.CRS.Simple}).setView([0, 0], 0);
+	  var bounds = [[0,0], [-256,256]];
     L.tileLayer('map/{z}/{x}/{y}.jpg', {
       continuousWorld: false,
       noWrap: true,  
       minZoom: 3,
       maxZoom: 7,
     }).addTo(map);
-	L.control.scale().addTo('map');
+  //ruler
+    var options = {
+      position: 'topleft',
+      lengthUnit: {
+        factor: 0.2, //  from km to m
+        display: 'Meters',
+        decimal: 0,
+    },
+                };
+L.control.ruler(options).addTo(map);
+	map.setMaxBounds(map.getBounds());
   //Coordinate Finder
-    var marker = L.marker([0, 0], {
+    var marker = L.marker([-128, 128], {
       draggable: true,
     }).addTo(map);
     marker.bindPopup('LatLng Marker').openPopup();
