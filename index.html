@@ -44,9 +44,139 @@
     },    
                 };
 L.control.ruler(options).addTo(map);
+  //Icons
+  var LONERS = L.icon({
+		iconUrl:       'scripts/images/Factions/Loner.png',
+		iconRetinaUrl: 'scripts/images/Factions/Loner.png',
+		shadowUrl:     'scripts/images/Factions/Loner_shadow.png',
+		iconSize:    [50, 82],
+		iconAnchor:  [24, 82],
+		popupAnchor: [2, -80],
+		tooltipAnchor: [32, -56],
+		shadowSize:  [82, 82]
+	});
+  var CS = L.icon({
+		iconUrl:       'scripts/images/Factions/CS.png',
+		iconRetinaUrl: 'scripts/images/Factions/CS.png',
+		shadowUrl:     'scripts/images/Factions/CS_shadow.png',
+		iconSize:    [50, 82],
+		iconAnchor:  [24, 82],
+		popupAnchor: [2, -80],
+		tooltipAnchor: [32, -56],
+		shadowSize:  [82, 82]
+	});
+  var DUTY = L.icon({
+		iconUrl:       'scripts/images/Factions/Duty.png',
+		iconRetinaUrl: 'scripts/images/Factions/Duty.png',
+		shadowUrl:     'scripts/images/Factions/Duty_shadow.png',
+		iconSize:    [50, 82],
+		iconAnchor:  [24, 82],
+		popupAnchor: [2, -80],
+		tooltipAnchor: [32, -56],
+		shadowSize:  [82, 82]
+	});
+  var FREEDOM = L.icon({
+		iconUrl:       'scripts/images/Factions/Freedom.png',
+		iconRetinaUrl: 'scripts/images/Factions/Freedom.png',
+		shadowUrl:     'scripts/images/Factions/Freedom_shadow.png',
+		iconSize:    [50, 82],
+		iconAnchor:  [24, 82],
+		popupAnchor: [2, -80],
+		tooltipAnchor: [32, -56],
+		shadowSize:  [82, 82]
+	});
+  var MERC = L.icon({
+		iconUrl:       'scripts/images/Factions/Merc.png',
+		iconRetinaUrl: 'scripts/images/Factions/Merc.png',
+		shadowUrl:     'scripts/images/Factions/Merc_shadow.png',
+		iconSize:    [50, 82],
+		iconAnchor:  [24, 82],
+		popupAnchor: [2, -80],
+		tooltipAnchor: [32, -56],
+		shadowSize:  [82, 82]
+	});
+  var EKO = L.icon({
+		iconUrl:       'scripts/images/Factions/Eko.png',
+		iconRetinaUrl: 'scripts/images/Factions/Eko.png',
+		shadowUrl:     'scripts/images/Factions/Eko_shadow.png',
+		iconSize:    [50, 82],
+		iconAnchor:  [24, 82],
+		popupAnchor: [2, -80],
+		tooltipAnchor: [32, -56],
+		shadowSize:  [82, 82]
+	});
+  var MILITARY = L.icon({
+		iconUrl:       'scripts/images/Factions/Military.png',
+		iconRetinaUrl: 'scripts/images/Factions/Military.png',
+		shadowUrl:     'scripts/images/Factions/Military_shadow.png',
+		iconSize:    [50, 82],
+		iconAnchor:  [24, 82],
+		popupAnchor: [2, -80],
+		tooltipAnchor: [32, -56],
+		shadowSize:  [82, 82]
+	});
+  var MONO = L.icon({
+		iconUrl:       'scripts/images/Factions/Mono.png',
+		iconRetinaUrl: 'scripts/images/Factions/Mono.png',
+		shadowUrl:     'scripts/images/Factions/Mono_shadow.png',
+		iconSize:    [50, 82],
+		iconAnchor:  [24, 82],
+		popupAnchor: [2, -80],
+		tooltipAnchor: [32, -56],
+		shadowSize:  [82, 82]
+	});
   //Coordinate Finder
     var marker = L.marker([-128, 128], {
       draggable: true,
+      icon: LONERS,
+    }).addTo(map);
+    marker.bindPopup('LatLng Marker').openPopup();
+    marker.on('dragend', function(e) {
+      marker.getPopup().setContent(marker.getLatLng().toString()).openOn(map);
+    });
+    var marker = L.marker([-128, 128], {
+      draggable: true,
+      icon: DUTY,
+    }).addTo(map);
+    marker.bindPopup('LatLng Marker').openPopup();
+    marker.on('dragend', function(e) {
+      marker.getPopup().setContent(marker.getLatLng().toString()).openOn(map);
+    });
+    var marker = L.marker([-128, 128], {
+      draggable: true,
+      icon: FREEDOM,
+    }).addTo(map);
+    marker.bindPopup('LatLng Marker').openPopup();
+    marker.on('dragend', function(e) {
+      marker.getPopup().setContent(marker.getLatLng().toString()).openOn(map);
+    });
+    var marker = L.marker([-128, 128], {
+      draggable: true,
+      icon: CS,
+    }).addTo(map);
+    marker.bindPopup('LatLng Marker').openPopup();
+    marker.on('dragend', function(e) {
+      marker.getPopup().setContent(marker.getLatLng().toString()).openOn(map);
+    });
+    var marker = L.marker([-128, 128], {
+      draggable: true,
+      icon: EKO,
+    }).addTo(map);
+    marker.bindPopup('LatLng Marker').openPopup();
+    marker.on('dragend', function(e) {
+      marker.getPopup().setContent(marker.getLatLng().toString()).openOn(map);
+    });
+    var marker = L.marker([-128, 128], {
+      draggable: true,
+      icon: MILITARY,
+    }).addTo(map);
+    marker.bindPopup('LatLng Marker').openPopup();
+    marker.on('dragend', function(e) {
+      marker.getPopup().setContent(marker.getLatLng().toString()).openOn(map);
+    });
+    var marker = L.marker([-128, 128], {
+      draggable: true,
+      icon: MONO,
     }).addTo(map);
     marker.bindPopup('LatLng Marker').openPopup();
     marker.on('dragend', function(e) {
