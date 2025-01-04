@@ -56,6 +56,16 @@ L.control.ruler(options).addTo(map);
 		tooltipAnchor: [32, -56],
 		shadowSize:  [82, 82]
 	});
+  var BANDITS = L.icon({
+		iconUrl:       'scripts/images/factions/Bandit.png',
+		iconRetinaUrl: 'scripts/images/factions/Bandit.png',
+		shadowUrl:     'scripts/images/factions/Bandit_shadow.png',
+		iconSize:    [50, 82],
+		iconAnchor:  [24, 82],
+		popupAnchor: [2, -80],
+		tooltipAnchor: [32, -56],
+		shadowSize:  [82, 82]
+	});
   var CS = L.icon({
 		iconUrl:       'scripts/images/factions/CS.png',
 		iconRetinaUrl: 'scripts/images/factions/CS.png',
@@ -178,6 +188,14 @@ L.control.ruler(options).addTo(map);
     var marker = L.marker([-128, 128], {
       draggable: true,
       icon: MONO,
+    }).addTo(map);
+    marker.bindPopup('LatLng Marker').openPopup();
+    marker.on('dragend', function(e) {
+      marker.getPopup().setContent(marker.getLatLng().toString()).openOn(map);
+    });
+    var marker = L.marker([-128, 128], {
+      draggable: true,
+      icon: BANDITS,
     }).addTo(map);
     marker.bindPopup('LatLng Marker').openPopup();
     marker.on('dragend', function(e) {
