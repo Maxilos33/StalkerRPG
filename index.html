@@ -14,14 +14,18 @@
     <div id="map" style="width: 100%; height: 100%; background: #83847E;"></div>
     <script type="text/javascript">
   //Creating the Map
-    var map = L.map('map', {crs: L.CRS.Simple}).setView([0, 0], 0);
-	  var bounds = [[0,0], [-256,256]];
+    var map = L.map('map', {crs: L.CRS.Simple},).setView([0, 0], 0);
     L.tileLayer('map/{z}/{x}/{y}.jpg', {
       continuousWorld: false,
       noWrap: true,  
       minZoom: 3,
       maxZoom: 7,
+      maxBoundsViscosity: 0.5,
     }).addTo(map);
+    map.setView( [-130.25, 123.8], 1);
+  //Boundaries Variables
+  var mapNW = [0,0], mapSE = [-256,256];
+	map.setMaxBounds(new L.LatLngBounds(mapNW, mapSE));	
   //ruler
     var options = {
       position: 'topleft',
@@ -29,10 +33,17 @@
         factor: 0.2, //  from km to m
         display: 'Meters',
         decimal: 0,
-    }
+    },
+    circleMarker: {               // Leaflet circle marker options for points used in this plugin
+        color: 'red',
+        radius: 2
+      },
+      lineStyle: {                  // Leaflet polyline options for lines used in this plugin
+        color: 'red',
+        dashArray: '1,6'
+    },    
                 };
 L.control.ruler(options).addTo(map);
-	map.setMaxBounds(map.getBounds());
   //Coordinate Finder
     var marker = L.marker([-128, 128], {
       draggable: true,
