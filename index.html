@@ -139,6 +139,8 @@ L.control.ruler(options).addTo(map);
 		tooltipAnchor: [32, -56],
 		shadowSize:  [82, 82]
 	});
+
+  //Icon Dictionary
   const     icon_dict =
  {
     "LONERS" : LONERS,
@@ -160,14 +162,24 @@ L.control.ruler(options).addTo(map);
     marker.on('dragend', function(e) {
       marker.getPopup().setContent(marker.getLatLng().toString()).openOn(map);
     });
+  //Marker Groups
+  var mg_bases = [];
+  var mg_camps = [];
+  var mg_anomalies = [];
+  var mg_landmarks = [];
+
+
+
   //load CSV file
-  $.get('data.csv', function(csvString) {
+  $.ajax({url:'data.csv', success:function(csvString) {
+    
 
 // Use PapaParse to convert string to array of objects
 var data = Papa.parse(csvString, {header: true, dynamicTyping: true}).data;
 
 // For each row in data, create a marker and add it to the map
 // For each row, columns `Latitude`, `Longitude`, and `Title` are required
+
 for (var i in data) {
   var row = data[i];
 
@@ -175,11 +187,39 @@ for (var i in data) {
     opacity: 1,
     icon: icon_dict[row.Icon],
   }).bindPopup(row.Title);
-  
-  marker.addTo(map);
-}
 
-}, "text");
+
+  switch(row.Group){
+  case 'Base': 
+  mg_bases.push(marker);
+  break;
+  case 'Camp': 
+  mg_camps.push(marker);
+  break;
+  case 'Anomaly': 
+  mg_anomalies.push(marker);
+  break;
+  case 'Landmark': 
+  mg_landmarks.push(marker);
+  break;
+  };
+  //marker.addTo(map);
+}
+}, dataType:"text", async: false});
+  mg_bases = L.layerGroup(mg_bases);
+  mg_camps = L.layerGroup(mg_camps);
+  mg_anomalies = L.layerGroup(mg_anomalies);
+  mg_landmarks = L.layerGroup(mg_landmarks);
+
+//Marker Overlay
+  var overlays={
+    "Faction Bases" : mg_bases,
+    "Camps" : mg_camps,
+    "Anomalies" : mg_anomalies,
+    "PoI" : mg_landmarks,
+    }
+//GROUP CONTROLS
+  L.control.layers(null, overlays).addTo(map);
     </script>
   </body>
 </html>
