@@ -49,7 +49,7 @@
                 };
 L.control.ruler(options).addTo(map);
   //Icons
-  var LONERS = L.icon({
+  var LONERS_B = L.icon({
 		iconUrl:       'scripts/images/factions/Loner.png',
 		iconRetinaUrl: 'scripts/images/factions/Loner.png',
 		shadowUrl:     'scripts/images/factions/Loner_shadow.png',
@@ -59,7 +59,17 @@ L.control.ruler(options).addTo(map);
 		tooltipAnchor: [32, -56],
 		shadowSize:  [82, 82]
 	});
-  var BANDITS = L.icon({
+  var LONERS_C = L.icon({
+		iconUrl:       'scripts/images/factions/Loner.png',
+		iconRetinaUrl: 'scripts/images/factions/Loner.png',
+		shadowUrl:     'scripts/images/factions/Loner_shadow.png',
+		iconSize:    [25, 41],
+		iconAnchor:  [12, 41],
+		popupAnchor: [1, -40],
+		tooltipAnchor: [16, -28],
+		shadowSize:  [41, 41]
+	});
+  var BANDITS_B = L.icon({
 		iconUrl:       'scripts/images/factions/Bandit.png',
 		iconRetinaUrl: 'scripts/images/factions/Bandit.png',
 		shadowUrl:     'scripts/images/factions/Bandit_shadow.png',
@@ -69,7 +79,17 @@ L.control.ruler(options).addTo(map);
 		tooltipAnchor: [32, -56],
 		shadowSize:  [82, 82]
 	});
-  var CS = L.icon({
+  var BANDITS_C = L.icon({
+		iconUrl:       'scripts/images/factions/Bandit.png',
+		iconRetinaUrl: 'scripts/images/factions/Bandit.png',
+		shadowUrl:     'scripts/images/factions/Bandit_shadow.png',
+		iconSize:    [25, 41],
+		iconAnchor:  [12, 41],
+		popupAnchor: [1, -40],
+		tooltipAnchor: [16, -28],
+		shadowSize:  [41, 41]
+	});
+  var CS_B = L.icon({
 		iconUrl:       'scripts/images/factions/CS.png',
 		iconRetinaUrl: 'scripts/images/factions/CS.png',
 		shadowUrl:     'scripts/images/factions/CS_shadow.png',
@@ -79,7 +99,17 @@ L.control.ruler(options).addTo(map);
 		tooltipAnchor: [32, -56],
 		shadowSize:  [82, 82]
 	});
-  var DUTY = L.icon({
+  var CS_C = L.icon({
+		iconUrl:       'scripts/images/factions/CS.png',
+		iconRetinaUrl: 'scripts/images/factions/CS.png',
+		shadowUrl:     'scripts/images/factions/CS_shadow.png',
+		iconSize:    [25, 41],
+		iconAnchor:  [12, 41],
+		popupAnchor: [1, -40],
+		tooltipAnchor: [16, -28],
+		shadowSize:  [41, 41]
+	});
+  var DUTY_B = L.icon({
 		iconUrl:       'scripts/images/factions/Duty.png',
 		iconRetinaUrl: 'scripts/images/factions/Duty.png',
 		shadowUrl:     'scripts/images/factions/Duty_shadow.png',
@@ -89,7 +119,17 @@ L.control.ruler(options).addTo(map);
 		tooltipAnchor: [32, -56],
 		shadowSize:  [82, 82]
 	});
-  var FREEDOM = L.icon({
+  var DUTY_C = L.icon({
+		iconUrl:       'scripts/images/factions/Duty.png',
+		iconRetinaUrl: 'scripts/images/factions/Duty.png',
+		shadowUrl:     'scripts/images/factions/Duty_shadow.png',
+		iconSize:    [25, 41],
+		iconAnchor:  [12, 41],
+		popupAnchor: [1, -40],
+		tooltipAnchor: [16, -28],
+		shadowSize:  [41, 41]
+	});
+  var FREEDOM_B = L.icon({
 		iconUrl:       'scripts/images/factions/Freedom.png',
 		iconRetinaUrl: 'scripts/images/factions/Freedom.png',
 		shadowUrl:     'scripts/images/factions/Freedom_shadow.png',
@@ -99,7 +139,17 @@ L.control.ruler(options).addTo(map);
 		tooltipAnchor: [32, -56],
 		shadowSize:  [82, 82]
 	});
-  var MERC = L.icon({
+  var FREEDOM_C = L.icon({
+		iconUrl:       'scripts/images/factions/Freedom.png',
+		iconRetinaUrl: 'scripts/images/factions/Freedom.png',
+		shadowUrl:     'scripts/images/factions/Freedom_shadow.png',
+		iconSize:    [25, 41],
+		iconAnchor:  [12, 41],
+		popupAnchor: [1, -40],
+		tooltipAnchor: [16, -28],
+		shadowSize:  [41, 41]
+	});
+  var MERC_B = L.icon({
 		iconUrl:       'scripts/images/factions/Merc.png',
 		iconRetinaUrl: 'scripts/images/factions/Merc.png',
 		shadowUrl:     'scripts/images/factions/Merc_shadow.png',
@@ -109,7 +159,17 @@ L.control.ruler(options).addTo(map);
 		tooltipAnchor: [32, -56],
 		shadowSize:  [82, 82]
 	});
-  var EKO = L.icon({
+  var MERC_C = L.icon({
+		iconUrl:       'scripts/images/factions/Merc.png',
+		iconRetinaUrl: 'scripts/images/factions/Merc.png',
+		shadowUrl:     'scripts/images/factions/Merc_shadow.png',
+		iconSize:    [25, 41],
+		iconAnchor:  [12, 41],
+		popupAnchor: [1, -40],
+		tooltipAnchor: [16, -28],
+		shadowSize:  [41, 41]
+	});
+  var EKO_B = L.icon({
 		iconUrl:       'scripts/images/factions/Eko.png',
 		iconRetinaUrl: 'scripts/images/factions/Eko.png',
 		shadowUrl:     'scripts/images/factions/Eko_shadow.png',
@@ -119,7 +179,17 @@ L.control.ruler(options).addTo(map);
 		tooltipAnchor: [32, -56],
 		shadowSize:  [82, 82]
 	});
-  var MILITARY = L.icon({
+  var EKO_C = L.icon({
+		iconUrl:       'scripts/images/factions/Eko.png',
+		iconRetinaUrl: 'scripts/images/factions/Eko.png',
+		shadowUrl:     'scripts/images/factions/Eko_shadow.png',
+		iconSize:    [25, 41],
+		iconAnchor:  [12, 41],
+		popupAnchor: [1, -40],
+		tooltipAnchor: [16, -28],
+		shadowSize:  [41, 41]
+	});
+  var MILITARY_B = L.icon({
 		iconUrl:       'scripts/images/factions/Military.png',
 		iconRetinaUrl: 'scripts/images/factions/Military.png',
 		shadowUrl:     'scripts/images/factions/Military_shadow.png',
@@ -129,7 +199,17 @@ L.control.ruler(options).addTo(map);
 		tooltipAnchor: [32, -56],
 		shadowSize:  [82, 82]
 	});
-  var MONO = L.icon({
+  var MILITARY_C = L.icon({
+		iconUrl:       'scripts/images/factions/Military.png',
+		iconRetinaUrl: 'scripts/images/factions/Military.png',
+		shadowUrl:     'scripts/images/factions/Military_shadow.png',
+		iconSize:    [25, 41],
+		iconAnchor:  [12, 41],
+		popupAnchor: [1, -40],
+		tooltipAnchor: [16, -28],
+		shadowSize:  [41, 41]
+	});
+  var MONO_B = L.icon({
 		iconUrl:       'scripts/images/factions/Mono.png',
 		iconRetinaUrl: 'scripts/images/factions/Mono.png',
 		shadowUrl:     'scripts/images/factions/Mono_shadow.png',
@@ -139,29 +219,47 @@ L.control.ruler(options).addTo(map);
 		tooltipAnchor: [32, -56],
 		shadowSize:  [82, 82]
 	});
+  var MONO_C = L.icon({
+		iconUrl:       'scripts/images/factions/Mono.png',
+		iconRetinaUrl: 'scripts/images/factions/Mono.png',
+		shadowUrl:     'scripts/images/factions/Mono_shadow.png',
+		iconSize:    [25, 41],
+		iconAnchor:  [12, 41],
+		popupAnchor: [1, -40],
+		tooltipAnchor: [16, -28],
+		shadowSize:  [41, 41]
+	});
 
   //Icon Dictionary
   const     icon_dict =
  {
-    "LONERS" : LONERS,
-    "BANDITS" : BANDITS,
-    "MILITARY" : MILITARY,
-    "CS" : CS,
-    "DUTY" : DUTY,
-    "FREEDOM" : FREEDOM,
-    "MERC" : MERC,
-    "EKO" : EKO,
-    "MONO" : MONO,
-    
+    "LONERS_B" : LONERS_B,
+    "LONERS_C" : LONERS_C,
+    "BANDITS_B" : BANDITS_B,
+    "BANDITS_C" : BANDITS_C,
+    "MILITARY_B" : MILITARY_B,
+    "MILITARY_C" : MILITARY_C,
+    "CS_B" : CS_B,
+    "CS_C" : CS_C,
+    "DUTY_B" : DUTY_B,
+    "DUTY_C" : DUTY_C,
+    "FREEDOM_B" : FREEDOM_B,
+    "FREEDOM_C" : FREEDOM_C,
+    "MERC_B" : MERC_B,
+    "MERC_C" : MERC_C,
+    "EKO_B" : EKO_B,
+    "EKO_C" : EKO_C,
+    "MONO_B" : MONO_B,
+    "MONO_C" : MONO_C,
  };
   //Coordinate Finder
-    var marker = L.marker([-128, 128], {
-      draggable: true,
-    }).addTo(map);
-    marker.bindPopup('LatLng Marker').openPopup();
-    marker.on('dragend', function(e) {
-      marker.getPopup().setContent(marker.getLatLng().toString()).openOn(map);
-    });
+  //  var marker = L.marker([-128, 128], {
+  //    draggable: true,
+  // }).addTo(map);
+  //  marker.bindPopup('LatLng Marker').openPopup();
+  //  marker.on('dragend', function(e) {
+  //    marker.getPopup().setContent(marker.getLatLng().toString()).openOn(map);
+  //  });
   //Marker Groups
   var mg_bases = [];
   var mg_camps = [];
