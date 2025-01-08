@@ -1,20 +1,21 @@
 .leaflet-ruler{
-  height: 35px;
-  width: 35px;
+  height: 30px;
+  width: 30px;
   background-image: url("../dist/icon.png"); /* <div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div> */
   background-repeat: no-repeat;
   background-position: center;
 }
 .leaflet-ruler:hover{
   background-image: url("../dist/icon-colored.png"); /* <div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div> */
+  background-color: #F4F4F4;
 }
 .leaflet-ruler-clicked{
-  height: 35px;
-  width: 35px;
+  height: 30px;
+  width: 30px;
   background-repeat: no-repeat;
   background-position: center;
   background-image: url("../dist/icon-colored.png");
-  border-color: chartreuse !important;
+  border-color: #FFCB00 !important;
 }
 .leaflet-bar{
   background-color: #ffffff;
@@ -25,7 +26,7 @@
 .result-tooltip{
   background-color: white;
   border-width: medium;
-  border-color: #de0000;
+  border-color: #FFCB00;
   font-size: smaller;
 }
 .moving-tooltip{
@@ -33,7 +34,7 @@
   background-clip: padding-box;
   opacity: 0.5;
   border: dotted;
-  border-color: red;
+  border-color: #FFCB00;
   font-size: smaller;
 }
 .plus-length{

@@ -1,16 +1,17 @@
 <!DOCTYPE html>
-<html = style="height: 100%;">
+<html style="height: 100%;">
   <head>
     <title>The Zone</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
     <link rel="stylesheet" href="scripts/leaflet.css">
     <link rel="stylesheet" href="leaflet-ruler-master/src/leaflet-ruler.css">
+	<link rel="stylesheet" href="scale/Leaflet.GraphicScale.min.css">
     <script src="scripts/leaflet.js"></script>
     <script src="leaflet-ruler-master/src/leaflet-ruler.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<script src="jquery.hotkeys-master/jquery.hotkeys.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.0/papaparse.min.js"></script>
-    <link rel="stylesheet" href="scale/Leaflet.GraphicScale.min.css">
   </head>
   
   <body style="height: 100%;margin: 0;">
@@ -41,11 +42,11 @@
         label: 'Distance',
     },
     circleMarker: {               // Leaflet circle marker options for points used in this plugin
-        color: 'red',
+        color: '#FFCB00',
         radius: 2
       },
       lineStyle: {                  // Leaflet polyline options for lines used in this plugin
-        color: 'red',
+        color: '#FFCB00',
         dashArray: '1,6'
     },    
                 };
@@ -345,6 +346,10 @@ for (var i in data) {
   L.control.layers(null, overlays, {
 	collapsed: false,
   }).addTo(map);
+//GM Mode Hotkey
+ $(document).on('keydown', null, 'alt+ctrl+g', function(){
+	L.circle([-162.243144, 106.125], {radius: 5}).addTo(map);
+ });
     </script>
   </body>
 </html>
