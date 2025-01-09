@@ -273,11 +273,9 @@ L.control.ruler(options).addTo(map);
     "MONO_B" : MONO_B,
     "MONO_C" : MONO_C,
  };
- /*
-  //testcircle
- L.circle([-162.243144, 106.125], {radius: 5}).addTo(map);
 
-  Coordinate Finder
+
+  //Coordinate Finder
     var marker = L.marker([-128, 128], {
      draggable: true,
    }).addTo(map);
@@ -285,7 +283,7 @@ L.control.ruler(options).addTo(map);
     marker.on('dragend', function(e) {
       marker.getPopup().setContent(marker.getLatLng().toString()).openOn(map);
     });
-*/
+
   //Marker Groups
   var mg_bases = [];
   var mg_camps = [];
@@ -294,7 +292,7 @@ L.control.ruler(options).addTo(map);
 
 
 
-  //load CSV file
+//load CSV file
   $.ajax({url:'data.csv', success:function(csvString) {
     
 
