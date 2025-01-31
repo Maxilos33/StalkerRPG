@@ -4,10 +4,10 @@ Lokomotyv Vehicle Station,-202.382842,151.078125,BANDITS_C,Camp
 Abandoned Tunnel Camp,-203.109425,158.515625,BANDITS_C,Camp
 Pig Farm,-199.280118,147.28125,BANDITS_C,Camp
 Shevchenko,-204.257558,202.726563,BANDITS_C,Camp
-Pumping Station,-232.867214,234.265625,BANDITS_C,Camp
+Pumping Station,-232.867214,234.265625,POI,Landmark
 Icarus,-189.75055,191.1875,BANDITS_C,Camp
 Skadovsk,-194.362009,209.796875,CS_B,Base
-Church,-224.547092,240.335938,CS_C,Camp
+Church,-224.547092,240.335938,POI,Landmark
 Repair Quay,-203.547263,225.84375,CS_C,Camp
 Clear Sky Sniper Camp,-204.124925,213.203125,CS_C,Camp
 Fish Farm ,-170.34273,207.09375,CS_C,Camp
@@ -39,7 +39,7 @@ Tunnel Camp,-193.249947,159.515625,LONERS_C,Camp
 Pig Farm,-194.186336,147.59375,LONERS_C,Camp
 Depot,-150.593881,112.140625,LONERS_C,Camp
 Flea Market,-143.937556,120.359375,LONERS_C,Camp
-Piledriver,-104.507852,87.210938,LONERS_C,Camp
+Piledriver,-104.507852,87.210938,POI,Landmark
 Ahroprom Factory,-146.453283,80.617188,LONERS_C,Camp
 Railway Maintanence Facility,-177.093956,180.125,LONERS_C,Camp
 Swamp Tram,-179.360002,223.976563,LONERS_C,Camp
@@ -56,7 +56,7 @@ Cordon Checkpoint,-213.640625,142.9375,MILITARY_C,Camp
 Central Checkpoint,-206.156137,123.3125,MILITARY_C,Camp
 Perimeter Dam,-203.797463,94.828125,MILITARY_C,Camp
 Zaton Swamp,-228.313038,235.8125,RAD_1,Radiation
-Zaton Marshland,-168.366918,216.875,RAD_2,Radiation
+Zaton Marshland,-167.250651,218,RAD_2,Radiation
 Zaton Plains,-199.110763,184.5,RAD_1,Radiation
 Snork Cave,-204.102032,238.4375,RAD_2,Radiation
 Boiler,-186.720132,221.8125,ANO_1,Anomaly
@@ -76,3 +76,21 @@ Old Barge,-212.123392,217.125,POI,Landmark
 Gas Station,-177.411592,197.78125,POI,Landmark
 Izumrudne,-175.130799,189.875,POI,Landmark
 Ranger Station,-198.656216,234.765625,POI,Landmark
+Cordon Waste Burial,-202.679723,139.890625,ANO_1,Anomaly
+Excavator,-100.942917,59.3125,POI,Landmark
+Container Yard,-108.507911,53.914063,POI,Landmark
+Dreg Heap,-131.374324,137,RAD_1,Radiation
+Garbage,-150.671966,119.71875,RAD_2,Radiation
+Burnt Forest,-190.737439,85.75,RAD_3,Radiation
+Truck Cementery,-133.998799,70.5,RAD_4,Radiation
+Red Forest,-105.172141,74.734375,RAD_4,Radiation
+Sand Mine,-171.90717,178.40625,RAD_1,Radiation
+Fisherman’s Cabin,-198.390672,183.140625,POI,Landmark
+Hawaii,-189.281263,183,ANO_1,Anomaly
+Bulba,-174.999848,135.726563,ANO_2,Anomaly
+Outer Checkpoint,-180.93791,148.03125,MILITARY_C,Camp
+Electric Tunnel,-197.015476,145.023438,ANO_1,Anomaly
+Underpass,-203.890684,145.84375,POI,Landmark
+Abandoned Farmstead,-190.93826,151.40625,POI,Landmark
+Decontamination Center,-204.773433,130.796875,POI,Landmark
+Levitating Silo,-198.812484,127.28125,POI,Landmark
