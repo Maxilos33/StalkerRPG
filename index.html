@@ -34,7 +34,8 @@
   //Boundaries Variables
   var mapNW = [0,0], mapSE = [-256,256];
 	map.setMaxBounds(new L.LatLngBounds(mapNW, mapSE));	
-	//Draw
+	//Drawcontrol
+	/*
 	var drawControl = new L.Control.Draw();
 	map.addControl(drawControl);
 
@@ -48,6 +49,7 @@
 		console.log(`<p>${JSON.stringify(layer.toGeoJSON())}</p>`)
 		drawnFeatures.addLayer(layer);	
 });
+	*/
 	//ruler
     var options = {
       position: 'topleft',
@@ -389,6 +391,7 @@ L.control.ruler(options).addTo(map);
 
 
   //Coordinate Finder
+  /*
     var marker = L.marker([-128, 128], {
      draggable: true,
    }).addTo(map);
@@ -397,6 +400,7 @@ L.control.ruler(options).addTo(map);
       marker.getPopup().setContent(marker.getLatLng().toString()).openOn(map);
     });
 
+	*/
   //Marker Groups
   var mg_bases = [];
   var mg_camps = [];
@@ -534,8 +538,81 @@ var overlays={
   }).addTo(map);
 //GM Mode Hotkey
  $(document).on('keydown', null, 'alt+ctrl+g', function(){
-	L.circle([-162.243144, 106.125], {radius: 5}).addTo(map);
+	clearButton.addTo(map);
+	anomalyButton.addTo(map);
  });
+ //adding buttons for anomalies
+const anomalyButton = L.control({ position: 'bottomright' });
+ anomalyButton.onAdd = () => {
+    const buttonDiv = L.DomUtil.create('div', 'button-wrapper');
+
+    buttonDiv.innerHTML = `<button>Create Anomalies</button>`;
+    buttonDiv.addEventListener('click', () => ftn_button_clicked());
+    return buttonDiv;
+};
+ const clearButton = L.control({ position: 'bottomright' });
+ clearButton.onAdd = () => {
+    const buttonDiv = L.DomUtil.create('div', 'button-wrapper');
+
+    buttonDiv.innerHTML = `<button>Clear Anomalies</button>`;
+    buttonDiv.addEventListener('click', () => clearmarkers());
+    return buttonDiv;
+};
+ //generate random anomalies
+
+ var arrMarkers
+ function ftn_button_clicked()
+{
+	clearmarkers();
+    
+	var num=1500;
+	if (num<5000)
+	{
+		plotrandom(num);
+	}
+}
+
+function ftn_button_clearmap()
+{
+	clearmarkers();
+}
+
+function clearmarkers()
+{
+	if (arrMarkers) 
+	{
+		for (i in arrMarkers) 
+		{
+			arrMarkers[i].removeFrom(map);
+		}
+	}
+	arrMarkers=new Array(0);
+}
+
+function plotrandom(number)
+{
+	pointsrand=[];
+	
+	for(var i=0;i<number;++i)
+	{
+		var point = [-256 + 256 * Math.random(),0 + 256 * Math.random()];
+		pointsrand.push(point);
+	}
+    
+	for(var i=0;i<number;++i)
+	{
+		var str_text=i+" : "+pointsrand[i];
+		var marker=placeMarker(pointsrand[i],str_text);
+		marker.addTo(map);
+        arrMarkers.push(marker);
+	}
+}
+
+function placeMarker(location,text) 
+{	
+    var marker = L.marker(location,{title:text});
+    return marker;
+}
     </script>
   </body>
 </html>
